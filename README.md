@@ -10,7 +10,7 @@ It is a repo where I store all of the code from my journey with Python - from be
 
 In this repo will be folders with names: `day-number-main-topic`
 
-For example: `day-1-variables`
+For example: `day-001-variables`
 
 <hr />
 
