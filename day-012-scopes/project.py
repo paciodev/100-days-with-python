@@ -6,12 +6,13 @@ from random import randint
 def start_game():
     number = randint(1, 100)
     number_of_attempts = 10
-    guess = 101
+    guess = 'Not guessed yet'
 
     system('cls')
     print(logo)
     print('Welcone to the Number Guessing Game!')
     print("I'm thinking of a number between 1 and 100.")
+    print(number)
 
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
     if difficulty == 'hard':
@@ -21,7 +22,7 @@ def start_game():
         system('cls')
         print(logo)
 
-        if guess == 101:
+        if guess == 'Not guessed yet':
             print("Good luck!")
         elif guess < number:
             print('Too low')
@@ -38,9 +39,14 @@ def start_game():
 
     system('cls')
     print(logo)
-    print('You win! Good job!')
-    print(f"The number was {number}")
-    print(f"You had {number_of_attempts - 1} attempts left to guess the number.")
+    if guess == number:
+        print('You win! Good job!')
+        print(f"The number was {number}")
+        print(f"You had {number_of_attempts - 1} attempts left to guess the number.")
+    else:
+        print('You lose! Nice try!')
+        print(f"The number was {number}")
+
 
     wants_to_play = input("Do you want to play again? Type 'yes' or 'no': ").lower()
     if wants_to_play == 'yes':
